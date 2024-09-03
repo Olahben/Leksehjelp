@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './lekser-maa-gjores.component.scss'
 })
 export class LekserMaaGjoresComponent {
-
+  ShowModal() {
+    const element = document.getElementById("add-homework") as HTMLDialogElement;
+    element.showModal();
+  }
 }
+
+
