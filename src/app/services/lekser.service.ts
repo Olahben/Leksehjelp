@@ -26,8 +26,12 @@ export class LekserService implements ILekseService {
   }
 
   HentAlle(): Lekse[] {
-    const homeworkListJson = localStorage.getItem(this.storageKey);
-    return homeworkListJson ? JSON.parse(homeworkListJson) : [];
+    if (typeof window !== "undefined") {
+      const homeworkListJson = localStorage.getItem(this.storageKey);
+      return homeworkListJson ? JSON.parse(homeworkListJson) : [];
+    } else {
+      return [];
+    }
   }
 
   Hent(id: number): Lekse {
