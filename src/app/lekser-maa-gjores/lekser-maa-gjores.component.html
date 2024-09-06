@@ -16,26 +16,28 @@
 <dialog id="add-homework" class="modal">
     <div class="modal-box">
         <h3 class="text-lg font-bold">Legg til lekse</h3>
-        <form>
+        <form [formGroup]="homeworkForm" (ngSubmit)="onSubmit()">
             <div class="form-control">
                 <label class="label">
                     <span class="label-text">Fag</span>
                 </label>
-                <input type="text" placeholder="Skriv fag" class="input input-bordered" required />
+                <input type="text" formControlName="fag" placeholder="Skriv fag" class="input input-bordered"
+                    required />
             </div>
 
             <div class="form-control mt-4">
                 <label class="label">
                     <span class="label-text">Innleveringsdato</span>
                 </label>
-                <input type="date" class="input input-bordered" required />
+                <input type="date" formControlName="innleveringsdato" class="input input-bordered" required />
             </div>
 
             <div class="form-control mt-4">
                 <label class="label">
                     <span class="label-text">Beskrivelse</span>
                 </label>
-                <textarea class="textarea textarea-bordered" placeholder="Beskrivelse" required></textarea>
+                <textarea formControlName="beskrivelse" class="textarea textarea-bordered" placeholder="Beskrivelse"
+                    required></textarea>
             </div>
 
             <div class="form-control mt-6">
@@ -44,6 +46,6 @@
         </form>
     </div>
     <form method="dialog" class="modal-backdrop">
-        <button>close</button>
+        <button (click)="closeModal()">Close</button>
     </form>
 </dialog>
