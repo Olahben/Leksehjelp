@@ -39,7 +39,8 @@ export class LekserMaaGjoresComponent {
     if (this.homeworkForm.valid) {
       const homeworkData = this.homeworkForm.value;
       this.lekserService.Laglekse(homeworkData.fag, homeworkData.innleveringsdato, homeworkData.beskrivelse);
-      console.log("success");
+      this.closeModal();
+      this.homeworkList = this.lekserService.HentUferdige();
     } else {
       console.log('Form is invalid');
     }
