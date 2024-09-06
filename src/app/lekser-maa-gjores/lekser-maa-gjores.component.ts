@@ -44,6 +44,11 @@ export class LekserMaaGjoresComponent {
       console.log('Form is invalid');
     }
   }
+
+  finishHomework(id: number): void {
+    this.lekserService.MarkerFullfort(id);
+    this.homeworkList = this.lekserService.HentUferdige();
+  }
 }
 
 
