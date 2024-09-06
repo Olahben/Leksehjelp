@@ -11,9 +11,17 @@ export class LekserService implements ILekseService {
 
   constructor() { }
 
-  Laglekse(lekse: Lekse): void {
+  Laglekse(fag: string, innleveringsDato: Date, beskrivelse: string): void {
+    let id: number = Date.now();
+    let newLekse: Lekse = {
+      id: id,
+      fag: fag,
+      innleveringsDato: innleveringsDato,
+      beskrivelse: beskrivelse,
+      fullfort: false
+    };
     const homeworkList = this.HentAlle();
-    homeworkList.push(lekse);
+    homeworkList.push(newLekse);
     localStorage.setItem(this.storageKey, JSON.stringify(homeworkList));
   }
 

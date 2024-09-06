@@ -1,7 +1,7 @@
 import { Lekse } from "../lekse";
 
 export interface ILekseService {
-    Laglekse(lekse: Lekse): void;
+    Laglekse(fag: string, innleveringsDato: Date, beskrivelse: string): void;
     HentAlle(): Lekse[];
     Hent(id: number): Lekse;
     HentUferdige(): Lekse[];
