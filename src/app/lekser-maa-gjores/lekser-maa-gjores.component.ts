@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Lekse } from '../models/lekse';
+import { Homework } from '../models/homework';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LekserService } from '../services/lekser.service';
+import { HomeworkService } from '../services/homework.service';
 import { NgFor, CommonModule, NgIf } from '@angular/common';
 
 @Component({
@@ -14,15 +14,15 @@ import { NgFor, CommonModule, NgIf } from '@angular/common';
 })
 export class LekserMaaGjoresComponent {
   homeworkForm: FormGroup;
-  homeworkList: Lekse[];
+  homeworkList: Homework[];
 
-  constructor(private fb: FormBuilder, private lekserService: LekserService) {
+  constructor(private fb: FormBuilder, private homeworkService: HomeworkService) {
     this.homeworkForm = this.fb.group({
       fag: ['', Validators.required],
       innleveringsdato: ['', Validators.required],
       beskrivelse: ['', Validators.required]
     });
-    this.homeworkList = lekserService.HentUferdige();
+    this.homeworkList = homeworkService.GetUnfinished();
   }
 
   ShowModal() {
@@ -38,17 +38,17 @@ export class LekserMaaGjoresComponent {
   onSubmit(): void {
     if (this.homeworkForm.valid) {
       const homeworkData = this.homeworkForm.value;
-      this.lekserService.Laglekse(homeworkData.fag, homeworkData.innleveringsdato, homeworkData.beskrivelse);
+      this.homeworkService.CreateHomework(homeworkData.fag, homeworkData.innleveringsdato, homeworkData.beskrivelse);
       this.closeModal();
-      this.homeworkList = this.lekserService.HentUferdige();
+      this.homeworkList = this.homeworkService.GetUnfinished();
     } else {
       console.log('Form is invalid');
     }
   }
 
   finishHomework(id: number): void {
-    this.lekserService.MarkerFullfort(id);
-    this.homeworkList = this.lekserService.HentUferdige();
+    this.homeworkService.MarkAsFinished(id);
+    this.homeworkList = this.homeworkService.GetUnfinished();
   }
 }
 
