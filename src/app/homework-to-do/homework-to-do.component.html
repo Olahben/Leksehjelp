@@ -14,9 +14,9 @@
         <tbody>
             <tr *ngFor="let homework of homeworkList">
                 <td>{{ homework.id }}</td>
-                <td>{{ homework.fag }}</td>
-                <td>{{ homework.innleveringsDato }}</td>
-                <td>{{ homework.beskrivelse }}</td>
+                <td>{{ homework.className }}</td>
+                <td>{{ homework.handInDate }}</td>
+                <td>{{ homework.description }}</td>
                 <td (click)="finishHomework(homework.id)"><button class="btn btn-ghost btn-xs">Fullfør</button></td>
             </tr>
         </tbody>

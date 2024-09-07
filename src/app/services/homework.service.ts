@@ -40,7 +40,7 @@ export class HomeworkService implements IHomeworkService {
   }
 
   GetUnfinished(): Homework[] {
-    return this.GetAll().filter(homework => homework.finished);
+    return this.GetAll().filter(homework => !homework.finished);
   }
 
   GetFinished(): Homework[] {

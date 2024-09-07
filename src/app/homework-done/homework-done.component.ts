@@ -4,13 +4,13 @@ import { Homework } from '../models/homework';
 import { NgFor, CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-lekser-gjort',
+  selector: 'app-homework-done',
   standalone: true,
   imports: [NgFor, CommonModule],
-  templateUrl: './lekser-gjort.component.html',
-  styleUrl: './lekser-gjort.component.scss'
+  templateUrl: './homework-done.component.html',
+  styleUrl: './homework-done.component.scss'
 })
-export class LekserGjortComponent {
+export class HomeworkDoneComponent {
   homeworkList: Homework[];
 
   constructor(lekseService: HomeworkService) {

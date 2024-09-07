@@ -6,13 +6,13 @@ import { HomeworkService } from '../services/homework.service';
 import { NgFor, CommonModule, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-lekser-maa-gjores',
+  selector: 'app-homework-to-do',
   standalone: true,
   imports: [ReactiveFormsModule, NgFor, CommonModule, NgIf],
-  templateUrl: './lekser-maa-gjores.component.html',
-  styleUrl: './lekser-maa-gjores.component.scss'
+  templateUrl: './homework-to-do.component.html',
+  styleUrl: './homework-to-do.component.scss'
 })
-export class LekserMaaGjoresComponent {
+export class HomeworkToDoComponent {
   homeworkForm: FormGroup;
   homeworkList: Homework[];
 
@@ -23,6 +23,7 @@ export class LekserMaaGjoresComponent {
       beskrivelse: ['', Validators.required]
     });
     this.homeworkList = homeworkService.GetUnfinished();
+    console.log(this.homeworkList);
   }
 
   ShowModal() {
