@@ -3,12 +3,21 @@
     <table class="table">
         <thead>
             <tr>
-                <th></th>
+                <th>Id</th>
                 <th>Fag</th>
                 <th>Innleveringsdato</th>
                 <th>Beskrivelse</th>
                 <th>Fullført</th>
             </tr>
         </thead>
+        <tbody>
+            <tr *ngFor="let homework of homeworkList">
+                <td>{{ homework.id }}</td>
+                <td>{{ homework.fag }}</td>
+                <td>{{ homework.innleveringsDato }}</td>
+                <td>{{ homework.beskrivelse }}</td>
+                <td>Ja</td>
+            </tr>
+        </tbody>
     </table>
 </div>
