@@ -1,0 +1,19 @@
+name: Check for errors
+
+# Trigger the workflow only on push to the 'Test' branch
+on:
+  push:
+    branches:
+      - 'Main'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm run test
