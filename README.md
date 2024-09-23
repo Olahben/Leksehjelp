@@ -1,28 +1,27 @@
 # Leksehjelp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+Dette prosjektet ble generert med [Angular CLI](https://github.com/angular/angular-cli) versjon 17.3.9.
 
-## Development server
-Run  `npm install` after having made a local clone of the project.
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Utviklingsserver
 
-## Code scaffolding
+Kjør npm install etter at du har klonet prosjektet lokalt. Kjør ng serve for å starte en utviklingsserver. Gå til http://localhost:4200/. Applikasjonen vil automatisk laste inn på nytt hvis du endrer noen av kildefilene.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Oppretting av kode
 
-## Build
+Kjør ng generate component component-name for å opprette en ny komponent. Du kan også bruke ng generate directive|pipe|service|class|guard|interface|enum|module.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Bygging
 
-## Running unit tests
+Kjør ng build for å bygge prosjektet. Byggeartefaktene vil bli lagret i dist/-katalogen.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Kjøre enhetstester
 
-## Running end-to-end tests
+Kjør ng test for å utføre enhetstester via [Karma](https://karma-runner.github.io).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Kjøre ende-til-ende-tester
 
-## Further help
+Kjør ng e2e for å utføre ende-til-ende-tester via en plattform etter eget valg. For å bruke denne kommandoen må du først legge til en pakke som implementerer ende-til-ende-testmuligheter.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-Test
+## Mer hjelp
+
+For å få mer hjelp om Angular CLI, bruk ng help eller sjekk ut [Angular CLI Overview and Command Reference](https://angular.io/cli)-siden.
