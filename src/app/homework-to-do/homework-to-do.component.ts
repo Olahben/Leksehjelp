@@ -50,6 +50,7 @@ export class HomeworkToDoComponent {
   finishHomework(id: number): void {
     this.homeworkService.MarkAsFinished(id);
     this.homeworkList = this.homeworkService.GetUnfinished();
+    window.location.reload();
   }
 }
 
